@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@import "typo.css"
+
+body, button, input, select, textarea {
+	font-size: 100%;
+}
+
+small {
+	font-size: 90%;
+}
