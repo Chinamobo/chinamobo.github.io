@@ -5,14 +5,15 @@ permalink: /:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
+lsi: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Chinamobo
+title : Chinamobo开发团队网志
 tagline: 我们是移动信息化专家
 author :
-  name : devagent
+  name : Chinamobo开发团队
   email : devagent@chinamobo.com
   github : chinamobo
   twitter : 
@@ -97,7 +98,7 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google 
+    provider : false 
     google : 
         tracking_id : 'UA-123-12'
     getclicky :
