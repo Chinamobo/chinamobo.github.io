@@ -1,11 +1,53 @@
 @charset "utf-8";
 
-@import "typo.css"
-
 body, button, input, select, textarea {
 	font-size: 100%;
 }
 
 small {
-	font-size: 90%;
+	font-size: 80%;
+}
+
+img, object {
+	max-width: 100%;
+	-ms-interpolation-mode: bicubic;
+}
+
+/* 模块定位 */
+.wrapper {
+	min-width: 20em;
+	width: 80%;
+	max-width: 70em;
+	margin: 0 auto;
+}
+
+header {
+	position: fixed;
+}
+
+.content {
+	position: fixed;
+	padding-bottom: 3em;
+	margin-left: 15em;
+	position: relative;
+}
+
+footer {
+	position: fixed;
+	bottom: 1.5em;
+	text-align: center;
+}
+
+#site-nav {
+}
+
+@media screen and (max-width: 50em) {
+	header, footer {
+		position: relative;
+		width: auto;
+	}
+	
+	.content {
+		margin-left: auto;
+	}
 }
