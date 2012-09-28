@@ -1,53 +1,113 @@
 @charset "utf-8";
-
+/* px always evil! */
 body, button, input, select, textarea {
-	font-size: 100%;
-}
+  font-size: 100%; }
 
 small {
-	font-size: 80%;
-}
+  font-size: 80%; }
 
 img, object {
-	max-width: 100%;
-	-ms-interpolation-mode: bicubic;
-}
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic; }
+
+a {
+  color: #08C;
+  text-decoration: none; }
+
+a:focus {
+  outline: thin dotted #333; }
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+  outline: 0; }
+
+a:active {
+  outline: 0; }
+
+article a {
+  border-bottom: 1px #114 dashed; }
+article a:visted {
+  border-bottom-color: #777; }
 
 /* 模块定位 */
 .wrapper {
-	min-width: 20em;
-	width: 80%;
-	max-width: 70em;
-	margin: 0 auto;
-}
+  min-width: 20em;
+  width: 80%;
+  max-width: 60em;
+  margin: 0 auto;
+  height: 100%; }
 
 header {
-	position: fixed;
-}
+  height: auto; }
+  header h1 {
+    line-height: 1; }
+  header hgroup {
+    padding: 1em 2em; }
 
-.content {
-	position: fixed;
-	padding-bottom: 3em;
-	margin-left: 15em;
-	position: relative;
-}
+.nav-wrapper {
+  position: fixed;
+  width: 5em; }
+
+#site_nav {
+  position: absolute;
+  min-width: 7em;
+  margin-left: 12em;
+  right: 0;
+  text-align: right; }
+  #site_nav li {
+    list-style: none;
+    overflow: hidden; }
+  #site_nav a {
+    display: block;
+    padding: .4em 1em;
+    text-decoration: none; }
+  #site_nav a.active {
+    background: #08C;
+    color: #FFF; }
+
+.main {
+  padding-bottom: 3em;
+  margin-left: 5em;
+  padding-left: .5em;
+  position: relative; }
+
+#content {
+  position: relative;
+  padding: .4em 1em; }
 
 footer {
-	position: fixed;
-	bottom: 1.5em;
-	text-align: center;
-}
+  position: fixed;
+  bottom: 1.5em;
+  text-align: center;
+  margin-left: -4em; }
 
-#site-nav {
-}
+@media screen and (max-width: 48em) {
+  .wrapper {
+    min-width: 12em;
+    width: 98%; }
 
-@media screen and (max-width: 50em) {
-	header, footer {
-		position: relative;
-		width: auto;
-	}
-	
-	.content {
-		margin-left: auto;
-	}
-}
+  header, #site_nav, footer, .nav-wrapper, #site_nav {
+    position: relative;
+    width: auto;
+    top: auto;
+    margin: 0; }
+
+  .main {
+    margin-left: auto; }
+
+  #site_nav {
+    margin: 0 1em;
+    background-color: #DEF; }
+    #site_nav li {
+      float: left; } }
+@media print {
+  .nav-wrapper, header, footer {
+    display: none; }
+
+  .wrapper, header, footer {
+    position: static;
+    width: auto; }
+
+  .content {
+    margin: auto; } }
