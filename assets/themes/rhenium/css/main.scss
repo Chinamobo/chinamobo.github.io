@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+// config
+$contentWidthMax: 50em;
+$contentWidthMin: 12em;
+
+$wrapperWidthMin: 20em;
+$wrapperWidthMax: 60em;
+$wrapperWidth: 80%;
+
+$columnChangeWidth: 48em;
+$headerHeight: auto;
+
+$asideColumnOffset: 5em;
+$asideColumnMinWidth: 7em;
+$asideColumnMaxWidth: 12em;
+
+
+/* px always evil! */
+body, button, input, select, textarea {
+	font-size: 100%;
+}
+small {
+	font-size: 80%;
+}
+
+img, object {
+	max-width: 100%;
+	-ms-interpolation-mode: bicubic;
+}
+
+a {
+	color: #08C;
+	text-decoration: none;
+}
+a:visited {
+	
+}
+a:focus {
+	outline: thin dotted #333;
+}
+a:hover {
+	color: #005580;
+	text-decoration: underline;
+	outline: 0;
+}
+a:active {
+	outline: 0;
+}
+a:target {
+	
+}
+article {
+
+	a {
+		border-bottom: 1px #114 dashed;
+	}
+	a:visted {
+		border-bottom-color: #777;
+	}
+
+}
+
+/* 模块定位 */
+.wrapper {
+	min-width: $wrapperWidthMin;
+	width: $wrapperWidth;
+	max-width: $wrapperWidthMax;
+	margin: 0 auto;
+	//background-color: rgba(224, 152, 114, 0.680);
+	height: 100%;
+}
+
+header {
+	height: $headerHeight;
+	//background-color: rgba(111, 187, 224, 0.680);
+	
+	h1 {
+		line-height: 1;
+	}
+	
+	hgroup {
+		padding: 1em 2em;
+	}
+}
+
+.nav-wrapper {
+	position: fixed;
+	width: $asideColumnOffset;
+	//background-color:rgba(64, 95, 76, 0.200);
+}
+
+#site_nav {
+	position: absolute;
+	min-width: $asideColumnMinWidth;
+	margin-left: $asideColumnMaxWidth;
+	right: 0;
+	text-align: right;
+	//background-color: rgba(224, 98, 219, 0.680);
+	
+	li {
+		list-style: none;
+		overflow: hidden;
+	}
+	
+	a {
+		display: block;
+		padding: .4em 1em;
+		text-decoration: none;
+	}
+	a.active {
+		background: #08C;
+		color: #FFF;
+	}
+}
+
+.main {
+	padding-bottom: 3em;
+	margin-left: $asideColumnOffset;
+	padding-left: .5em;
+	position: relative;
+	//background-color: rgba(104, 224, 105, 0.680);
+}
+
+#content {
+	position: relative;
+	padding: .4em 1em;
+}
+
+footer {
+	position: fixed;
+	bottom: 1.5em;
+	text-align: center;
+	margin-left: -4em;
+	//background-color: rgba(152, 119, 224, 0.680);
+}
+
+@media screen and (max-width: $columnChangeWidth) {
+	.wrapper {
+		min-width: $contentWidthMin;
+		width: 98%;
+	}
+
+	header, #site_nav, footer, .nav-wrapper, #site_nav {
+		position: relative;
+		width: auto;
+		top: auto;
+		margin: 0;
+	}
+	
+	.main {
+		margin-left: auto;
+	}
+	
+	#site_nav {
+		margin: 0 1em;
+		background-color: #DEF;
+		li {
+			float: left;
+		}
+	}
+}
+
+@media print {
+	.nav-wrapper, header, footer {
+		display: none;
+	}
+	.wrapper, header, footer {
+		position: static;
+		width: auto;
+	}
+	.content {
+		margin: auto;
+	}
+}
