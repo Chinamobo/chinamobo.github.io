@@ -1,6 +1,6 @@
 ---
 layout: page
-title : About
+title : 关于
 tagline: 我们是移动信息化专家
 header : 关于
 group: navigation
