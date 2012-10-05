@@ -1,6 +1,7 @@
-<article>
-  <h1>{{ page.title }}</h1>
+<article class="typo">
+  {% if page.group != 'navigation' %}
+  <h1 class="page_title">{{ page.title }}</h1>
+  {% endif %}
   {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}
-  
   {{ content }}
 </article>

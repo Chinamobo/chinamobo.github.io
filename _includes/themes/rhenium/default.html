@@ -13,12 +13,15 @@
 	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1., maximum-scale=1., user-scalable=no">
-	<!-- ,  -->
-    <link href="{{ ASSET_PATH }}/css/typo.css" rel="stylesheet" type="text/css" media="all">
+	<link href="{{ ASSET_PATH }}/css/reset.css" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/css/main.css" rel="stylesheet" type="text/css" media="all">
     <script src="{{ ASSET_PATH }}/js/main.js"></script>
     
-	<link href="{{ site.production_url }}/atom.xml" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
+    {% if site.author.feedburner %}
+    <link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
+	{% else %}
+	<link href="{{ BASE_PATH }}/atom.xml" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
+	{% endif %}
 	<link rel="shortcut icon" href="/favicon.ico">
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -35,6 +38,11 @@
 				<h1><a href="{{ HOME_PATH }}" rel="home">{{ site.title }}</a></h1>
 				<p id="tagline">{{ site.tagline }}</p>
 			</hgroup>
+			<ul id="profile-bar">
+				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">github</a></li>{% endif %}
+				{% if site.author.twitter %}<li><a href="https://github.com/{{ site.author.github }}">twitter</a></li>{% endif %}
+				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">feedburner</a></li>{% endif %}
+			</ul>
 		</header>
 		<div class="nav-wrapper">
 			<nav id="site_nav" class="clearfix">
@@ -44,12 +52,12 @@
 			</nav>
 		</div>
 		<div class="main">
-			<div id="content" class="typo">
+			<div id="content">
 				{{ content }}
 			</div>
 		</div>
 		<footer>
-			<p><small>&copy; {{ site.author.name }} 2012</small></p>
+			<small>&copy; {{ site.author.name }} 2012</small>
 		</footer>
 	</div><!-- wrapper -->
 	{% include JB/analytics %}
