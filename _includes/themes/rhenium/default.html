@@ -15,7 +15,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1., maximum-scale=1., user-scalable=no">
 	<link href="{{ ASSET_PATH }}/css/reset.css" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/css/main.css" rel="stylesheet" type="text/css" media="all">
-    <script src="{{ ASSET_PATH }}/js/main.js"></script>
     
     {% if site.author.feedburner %}
     <link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
@@ -60,6 +59,7 @@
 			<small>&copy; {{ site.author.name }} 2012</small>
 		</footer>
 	</div><!-- wrapper -->
+	<script src="{{ ASSET_PATH }}/js/main.js"></script>
 	{% include JB/analytics %}
   </body>
 </html>

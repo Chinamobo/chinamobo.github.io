@@ -1,38 +1,33 @@
 var W = window, D = document;
 
 if (navigator.userAgent.match(/(iPhone|iPad)/i)) {
-  window.addEventListener('load', gestureZoom, true);
+  gestureZoom();
 }
 
 function gestureZoom() {
-  var ctScale = NaN;
   var root = D.getElementById('content'); 
+  var maxScale = 200;
+  var minScale = 25;
+  var lastScale = NaN;
+  var c = 0;
 
   D.addEventListener('gesturestart', function(event) {
-    
+    lastScale = parseInt(root.style.fontSize);
+    if (!(lastScale > 0)) {
+      lastScale = 100;
+    }
   }, true);
   D.addEventListener('gesturechange', function(event) {
-    ctScale = event.scale;
-    
-    if (typeof(ctScale) == 'number') {
-      size = (((ctScale-1)/4+1)*100)+'%';
-      root.style.fontSize = size;
+    if(c++%11) return;
+    var scale = event.scale;
+    if (typeof(event.scale) == 'number') {
+      size = ((scale-1)/4*100+lastScale);
+      if (size > maxScale || size < minScale) return;
+      root.style.fontSize = size+'%';
     }
-  }, false);
-}
-
-function dout(something) {
-  console.log(something);
-}
-function douto(obj, noteStr) {
-  console.log(noteStr + " type: " + typeof(obj) + " " + obj);
-  for (var name in obj) {
-    if(name.match(/^SVG/i)) continue;
-    if(typeof(obj[name]) == 'function') continue;
+  }, true);
+  
+  D.addEventListener('gestureend', function(event) {
     
-    console.log("\t" + name + ":\t" + obj[name]);
-  } 
+  }, true);
 }
-
-function _dout() {}
-function _douto() {}
