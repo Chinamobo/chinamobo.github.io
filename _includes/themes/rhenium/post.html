@@ -1,7 +1,13 @@
 <article class="typo">
   <h1 class="page_title">{{ page.title }}</h1>
   {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}
-  <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+  <div class="date"><span>{{ page.date | date_to_long_string }}
+    {% if page.author_url %}
+    by <a href="{{ page.author_url }}">{% if page.author %}{{ page.author }}{% else %}author{% endif %}</a>
+    {% else %}
+      {% if page.author %} by {{ page.author }}{% endif %}
+    {% endif %}
+    </span></div>
   {% unless page.tags == empty %}
   <ul class="tag_box">
     {% assign tags_list = page.tags %}
