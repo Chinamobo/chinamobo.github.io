@@ -45,6 +45,12 @@
 		</header>
 		<div class="nav-wrapper">
 			<nav id="site_nav" class="clearfix">
+				{% if page.url == '/index.html' %}
+				<li class="active"><a href="{{ site.production_url }}" class="active">首页</a></li>
+				{% else %}
+				<li><a href="{{ site.production_url }}">首页</a></li>
+				{% endif %}
+				
 				{% assign pages_list = site.pages %}
 				{% assign group = 'navigation' %}
 				{% include JB/pages_list %}

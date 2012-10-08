@@ -9,6 +9,8 @@ $fontCode	: 'Courier New', Courier, monospace;
 
 /* px always evil! */
 $defaultFontSize : 100%;
+$thinWidth	: 30em;
+
 
 // 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体
 html {
@@ -73,9 +75,15 @@ img {
 	-ms-interpolation-mode: bicubic;    
 }
 
-img, object {
+img, object, audio, canvas, video {
 	max-width: 100%;
 }
+
+// Corrects overflow displayed oddly in IE9
+svg:not(:root) {
+	overflow: hidden;
+}
+
 
 // 去除默认边框
 fieldset, img {
@@ -85,31 +93,10 @@ fieldset, img {
 /// 处理链接
 a {
 	text-decoration: none;
-	outline: 0;
-	color: #08C;
-
-	&:visited {
-	}
 	
-	&:focus {
-		
+	&:hover, &:active {
+		outline: 0;
 	}
-	
-	&:hover {
-		color: #005580;
-	}
-	
-	&:active {
-	}
-	
-	&:target {
-		
-	}
-}
-h2:target,
-h3:target,
-span:target {
-	background-color: rgba(255, 248, 128, 0.400);
 }
 
 /// 表格
@@ -131,14 +118,28 @@ caption, th {
 
 // 块/段落引用
 blockquote {
-	margin: 1em 4em 1em 2em;
-	padding: 0.6em 1em;
+	margin: 1em 2em 1em 1.7em;
+	padding: .5em .8em;
 	background: #f1f1f1;
+	
+	blockquote {
+		padding: .2em 1em;
+		margin: 1em 0 0;
+		border-left: .3em solid #ddd;
+	}
 }
-blockquote blockquote {
-	padding: 0 0 0 1em;
-	margin-left: 2em;
-	border-left: 0.4em solid #ddd;
+
+@media screen and (max-width: $thinWidth) {
+	blockquote {
+		margin: 1em 0;
+		background: #f1f1f1;
+		
+		blockquote {
+			padding: 0 .5em 0 .7em;
+			margin: .7em 0 .3em 0;
+			border-left: .3em solid #ddd;
+		}
+	}
 }
 
 // Firefox 以外，元素没有下划线，需添加
@@ -179,7 +180,7 @@ sub {
 	bottom: -0.25em;
 }
 
-u, .typo-u {
+u {
 	text-decoration: underline;
 }
 
@@ -196,7 +197,7 @@ pre {
 	border: 1px solid #ddd;
 	border-left-width: 0.4em;
 	background: #fbfbfb;
-	padding: 10px;
+	padding: .4em .7em;
 }
 
 .clearfix:before, .clearfix:after {
@@ -211,60 +212,58 @@ pre {
 }
 
 // 保证块/段落之间的空白隔行
-.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
-.typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table {
 	margin-bottom: 1em;
 }
 
 // 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化
-.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
-.typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6 {
+.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6 {
 	margin-bottom: 0.4em;
 	line-height: 1.5;
 }
-.typo h1, .typo-h1 {
+.typo h1 {
 	font-size: 1.8em;
 }
-.typo h2, .typo-h2 {
+.typo h2 {
 	font-size: 1.6em;
 }
-.typo h3, .typo-h3 {
+.typo h3 {
 	font-size: 1.4em;
 }
-.typo h4, .typo-h4 {
+.typo h4 {
 	font-size: 1.2em;
 }
-.typo h5, .typo h6, .typo-h5, .typo-h6 {
+.typo h5, .typo h6 {
 	font-size: 1em;
 }
 
 // 在文章中，应该还原 ul 和 ol 的样式
-.typo ul, .typo-ul {
+.typo ul {
 	margin-left: 1.3em;
 	list-style: disc;
 }
-.typo ol, .typo-ol {
+.typo ol {
 	list-style: decimal;
 	margin-left: 1.9em;
 }
-.typo li ul, .typo li ol, .typo-ul ul, .typo-ul ol, .typo-ol ul, .typo-ol ol {
+.typo li ul, .typo li ol {
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: 2em;
 }
-.typo li ul, .typo-ul ul, .typo-ol ul {
+.typo li ul {
 	list-style: circle;
 }
 
 // 同 ul/ol，在文章中应用 table 基本格式
-.typo table th, .typo table td, .typo-table th, .typo-table td {
+.typo table th, .typo table td {
 	border: 1px solid #ddd;
-	padding: 5px 10px;
+	padding: .3em .7em;
 }
-.typo table th, .typo-table th {
+.typo table th {
 	background: #fbfbfb;
 }
-.typo table thead th, .typo-table thead th {
+.typo table thead th {
 	background: #f1f1f1;
 }
 

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Home
+title: 首页
 tagline: Welcome~
+group: special
 ---
 {% include JB/setup %}
 
