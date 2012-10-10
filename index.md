@@ -9,6 +9,7 @@ group: special
 ## MISP
 [安装最新版](itms-services://?action=download-manifest&url=http://chinamobo.github.com/misp/install.plist)
 
+[IPA包下载](/misp/mobook.ipa)
 
 ## 钱袋测试
 [在线安装](itms-services://?action=download-manifest&url=http://chinamobo.github.com/crazypurse/install.plist)
