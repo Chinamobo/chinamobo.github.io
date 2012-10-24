@@ -17,7 +17,7 @@
 			<key>metadata</key>
 			<dict>
 				<key>news</key>
-				<string></string>
+				<string>test</string>
 				<key>bundle-identifier</key>
 				<string>com.chinamobo.mips</string>
 				<key>bundle-version</key>
