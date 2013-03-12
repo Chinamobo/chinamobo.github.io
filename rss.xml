@@ -24,7 +24,7 @@ title : RSS Feed
             {% if post.author %}
             <author>{{ post.author }}</author>
             {% else %}
-            <author>{{ site.author }}</author>
+            <author>{{ site.author.name }}</author>
             {% endif %}
             <content:encoded><![CDATA[{{ post.content }}]]></content:encoded>
         </item>
