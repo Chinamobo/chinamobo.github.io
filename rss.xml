@@ -4,7 +4,7 @@ title : RSS Feed
 ---
 
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
     <channel>
         <title>{{ site.title }}</title>
         <description>{{ site.title }} - {{ site.author.name }}</description>
@@ -22,11 +22,17 @@ title : RSS Feed
             <guid>{{ site.production_url }}{{ post.id }}</guid>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
             {% if post.author %}
-            <author>{{ post.author }}</author>
+            <author>
+              {% if post.author_email %}
+                {{ post.author_email }}
+              {% else %}
+                {{ post.author }}
+              {% endif %}
+            </author>
             {% else %}
-            <author>{{ site.author.name }}</author>
+            <author>{{ site.author.email }}</author>
             {% endif %}
-            <content:encoded><![CDATA[{{ post.content }}]]></content:encoded>
+            <description><![CDATA[{{ post.content }}]]></description>
         </item>
         {% endfor %}
     </channel>
