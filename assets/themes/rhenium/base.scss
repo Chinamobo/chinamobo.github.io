@@ -1,6 +1,7 @@
-@charset "utf-8";
+// @import "typo"
 
-/// config
+// config
+
 $contentWidthMax: 50em;
 $contentWidthMin: 12em;
 
@@ -15,12 +16,12 @@ $asideColumnOffset	: 5em;
 $asideColumnMinWidth: 7em;
 $asideColumnMaxWidth: 12em;
 
-/// color
+// color
 $baseColor1	: #08C;
 $baseColor1Highlighted: #005580;
 $lightColor : #FFF;
 
-/// 处理链接
+// 处理链接
 a {
 	color: $baseColor1;
 
@@ -49,7 +50,7 @@ span:target {
 	background-color: rgba(255, 248, 128, 0.400);
 }
 
-/// function
+// function
 @mixin border-radius($expr: .5em) {
 	-moz-border-radius: $expr;
 	//-webkit-border-radius: $expr;
@@ -59,7 +60,7 @@ span:target {
 	border-radius: $expr;
 }
 
-/// 模块定位
+// 模块定位
 .wrapper {
 	min-width: $wrapperWidthMin;
 	width: $wrapperWidth;
@@ -114,12 +115,12 @@ footer {
 		top: auto;
 		margin: 0;
 	}
-	
+
 	.main {
 		margin-left: auto;
 		padding-left: 0;
 	}
-	
+
 	#site_nav {
 		margin: 0 1em;
 		background-color: lighten($baseColor1, 56%);
@@ -132,7 +133,7 @@ footer {
 /// 处理滚动
 article.typo {
 	overflow-x: hidden;
-	
+
 	table, pre {
 		display: block;
 		overflow-x: auto;
@@ -144,7 +145,7 @@ header {
 	h1 {
 		line-height: 1;
 	}
-	
+
 	hgroup {
 		padding: 1em 2em;
 	}
@@ -181,7 +182,7 @@ header {
 	position: absolute;
 	top: 0;
 	right: 0;
-	
+
 	li {
 		display: inline-block;
 	}
@@ -198,7 +199,7 @@ article {
 		&:visited {
 			color: #777;	
 		}
-		
+
 		&:hover {
 			text-decoration: underline;
 		}
@@ -216,7 +217,7 @@ h1.page_title {
 
 .pagination {
 	text-align: center;
-	
+
 	.prev {
 		float: left;
 		text-align: left;
@@ -240,14 +241,14 @@ ul.tag_box {
 .tag_box {
 	overflow:hidden;
 	font-size: 70%;
-	
+
 	li {
 		list-style: none;
 		float: left;
 		margin-right: .8em;
 		margin-bottom: .6em;
 	}
-	
+
 	a {
 		display: block;
 		background: #FAFAFA;
@@ -256,11 +257,11 @@ ul.tag_box {
 		color:#005F6B;
 		@include border-radius(.5em);
 		text-decoration:none;
-		
+
 		&:visited {
 			color:#005F6B;
 		}
-		
+
 		&:hover {
 			text-decoration: none;
 			background: #005F6B;
@@ -268,7 +269,7 @@ ul.tag_box {
 			color: $lightColor;
 		}
 	}
-	
+
 	a span{
 		vertical-align:super;
 		font-size:0.8em;
@@ -293,30 +294,30 @@ ul.tag_box {
 	word-wrap: break-word;
 	border: 1px #666 solid;
 	display: table;
-	
+
 	col {
 		border-left: 1px #CCC solid;
 	}
-	
+
 	.odd, tr:nth-child(odd) {
 		background: #E7F2F9;
 	}
-	
+
 	.firstCol {
 		border-left: 0;
 	}
-	
+
 	th {
 		background-color: #82A689;
 		text-align: right;
 		font-weight: normal;
 	}
-	
+
 	tr:hover {
 		background-color: #3AC;
 		color: $lightColor;
 	}
-	
+
 	th[scope^='col'], td[scope^='col'] {
 		background: #CCC;
 		border-top: 1px #A5A5A5 solid;
