@@ -10,17 +10,16 @@ title : RSS Feed
         <description>{{ site.title }} - {{ site.author.name }}</description>
         <link>{{ site.production_url }}{{ site.rss_path }}</link>
         <link>{{ site.production_url }}</link>
-        <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
-        <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+        <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+        <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <ttl>1800</ttl>
         
-        {% for post in site.posts limit:3 %}
+        {% for post in site.posts limit:{{ site.feed_output_limit }} %}
         <item>
             <title>{{ post.title | xml_escape }}</title>
-            <description>{{ post.content | xml_escape }}</description>
             <link>{{ site.production_url }}{{ post.url }}</link>
             <guid>{{ site.production_url }}{{ post.id }}</guid>
-            <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
             {% if post.author %}
             <author>
               {% if post.author_email %}
