@@ -14,21 +14,17 @@ title : RSS Feed
         <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <ttl>1800</ttl>
         
-        {% for post in site.posts limit:{{ site.feed_output_limit }} %}
-        <item>
+        {% for post in site.posts limit:{{ site.feed_output_limit }} %}<item>
             <title>{{ post.title | xml_escape }}</title>
             <link>{{ site.production_url }}{{ post.url | urlencode }}</link>
             <guid>{{ site.production_url }}{{ post.id | urlencode }}</guid>
             <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-            {% if post.author_email %}
-            <author>
+            {% if post.author_email %}<author>
                 {{ post.author_email }} {% if post.author %}({{ post.author }}){% endif %}
             </author>
             {% else %}
-            <author>{{ site.author.email }} ({{ site.author.name }})</author>
-            {% endif %}
+            <author>{{ site.author.email }} ({{ site.author.name }})</author>{% endif %}
             <description><![CDATA[{{ post.content }}]]></description>
-        </item>
-        {% endfor %}
+        </item>{% endfor %}
     </channel>
 </rss>

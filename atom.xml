@@ -15,20 +15,16 @@ title : Atom Feed
         <email>{{ site.author.email }}</email>
     </author>
     
-    {% for post in site.posts limit:{{ site.feed_output_limit }} %}
-    <entry>
+    {% for post in site.posts limit:{{ site.feed_output_limit }} %}<entry>
         <title>{{ post.title | xml_escape }}</title>
         <link rel="alternate" type="text/html" href="{{ site.production_url }}{{ post.url }}" />
         <id>{{ site.production_url }}{{ post.id | urlencode }}</id>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
-        {% if post.author %}
-        <author>
+        {% if post.author %}<author>
             <name>{{ post.author }}</name>
             {% if post.author_url %}<uri>{{ post.author_url }}</uri>{% endif %}
             {% if post.author_email %}<email>{{ post.author_email }}</email>{% endif %}
-        </author>
-        {% endif %}
+        </author>{% endif %}
         <content type="html">{{ post.content | xml_escape }}</content>
-    </entry>
-    {% endfor %}
+    </entry>{% endfor %}
 </feed>
