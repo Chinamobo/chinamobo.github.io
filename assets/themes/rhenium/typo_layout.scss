@@ -1,0 +1,54 @@
+
+// 内外边距通常让各个浏览器样式的表现位置不同
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, p, blockquote, th, td, hr, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+}
+
+// IE8/9 HTML5 标签重设
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+}
+// IE6 7 8(q) 显示为inline
+iframe {
+	display: block;
+}
+
+// Address styling not present in IE 8/9.
+[hidden] {
+	display: none;
+}
+
+// @媒体
+img {
+	// Remove border when inside `a` element in IE 8/9.
+	border: 0;
+
+	// 限制图像尺寸
+	max-width: 100%;
+	height: auto;
+
+	// 优化图像在 IE6-7 的抗锯齿处理
+	-ms-interpolation-mode: bicubic;
+}
+
+// HTML5 媒体文件跟 img 保持一致，IE8/9
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+// Prevent modern browsers from displaying audio without controls.
+// Remove excess height in iOS 5 devices.
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+// Correct overflow displayed oddly in IE 9.
+svg:not(:root) {
+	overflow: hidden;
+}
+
+// End @媒体
