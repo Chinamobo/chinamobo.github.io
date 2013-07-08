@@ -6,7 +6,7 @@ title : Atom Feed
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title type="text">{{ site.title }}</title>
     <subtitle type="text">{{ site.tagline }}</subtitle>
-    <link href="{{ site.production_url }}/{{ site.JB.atom_path }}" rel="self" type="application/atom+xml"/>
+    <link href="{{ site.production_url }}{{ site.JB.atom_path }}" rel="self" type="application/atom+xml"/>
     <link href="{{ site.production_url }}" rel="alternate" type="text/html"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
     <id>{{ site.production_url }}</id>
@@ -14,17 +14,18 @@ title : Atom Feed
         <name>{{ site.author.name }}</name>
         <email>{{ site.author.email }}</email>
     </author>
-    
-    {% for post in site.posts limit:{{ site.feed_output_limit }} %}<entry>
+    {% for post in site.posts limit:{{ site.feed_output_limit }} %}
+    <entry>
         <title>{{ post.title | xml_escape }}</title>
         <link rel="alternate" type="text/html" href="{{ site.production_url }}{{ post.url }}" />
-        <id>{{ site.production_url }}{{ post.id | urlencode }}</id>
+        <id>{{ site.production_url }}{{ post.url | UrlEncode }}</id>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         {% if post.author %}<author>
             <name>{{ post.author }}</name>
-            {% if post.author_url %}<uri>{{ post.author_url }}</uri>{% endif %}
+            {% if post.author_url %}<uri>{{ post.author_url | urlencode }}</uri>{% endif %}
             {% if post.author_email %}<email>{{ post.author_email }}</email>{% endif %}
         </author>{% endif %}
-        <content type="html">{{ post.content | xml_escape }}</content>
-    </entry>{% endfor %}
+        <content type="html"><![CDATA[{{ post.content }}]]></content>
+    </entry>
+    {% endfor %}
 </feed>
