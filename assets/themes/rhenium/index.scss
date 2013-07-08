@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+// config
+
+$columnWidthMainMin : 35em;
+$columnWidthMain : 40em;
+$columnWidthSide : 15em;
+
+$columnChange : $columnWidthMainMin + $columnWidthSide + 2;
+
+// 保证正文过少时侧边栏可见
+$columnMinHeight : 60em;
+
+html {
+	background-color: #fbfafd;
+}
+
+.wrapper {
+	margin: 1em auto;
+
+	min-width: $columnWidthMainMin;
+	width: 90%;
+	max-width: $columnWidthMain;
+}
+
+header, .main, .side {
+	-webkit-box-shadow: 0 0 .7em 0 #000;
+	box-shadow: 0 0 .7em 0 #000;
+	opacity: 0.6;
+}
+
+.column-1 {
+	background-color: #7fff97;
+
+	float: right;
+	//width: $columnWidthSide;
+}
+.column-2 {
+	background-color: #fffe9b;
+	//margin-right: $columnWidthSide;
+	//width: $columnWidthMain;
+	position: absolute;
+	overflow: auto;
+}
+.column-3 {
+	background-color: #ffb5c7;
+
+	//width: $columnWidthSide;
+	float: right;
+	clear: right;
+}
+
+.lbox {
+	// background: #FFF;
+	border: 1px #aaa solid;
+}
+
+@media screen and (orientation: landscape) {
+
+}
+
+// iPhone
+@media screen and (max-device-width: 480px) {
+
+}
+
+@media screen and (max-width:$columnChange * 0.8) {
+	html {
+		font-size: 96%;
+	}
+	.wrapper {
+		width: 94%;
+	}
+}
+
+@media screen and (max-width:$columnChange * 0.8) {
+	html {
+		font-size: 90%;
+	}
+	.wrapper {
+		width:98%;
+		min-width: 0;
+	}
+}
+
+@media screen and (min-width:$columnChange) {
+	body {
+		background: #FEE;
+	}
+	.wrapper {
+		position: relative;
+
+		min-width: $columnWidthMainMin + $columnWidthSide;
+		max-width: $columnWidthMain + $columnWidthSide;
+	}
+
+	.main {
+		float: left;
+		width: 100%;
+		background-color:#1bff31;
+		margin-right: $columnWidthSide;
+	}
+	header {
+		position: absolute;
+		right: 0;
+		width: $columnWidthSide;
+	}
+
+	.side {
+		width: $columnWidthSide;
+		/* z-index: 100;
+		top:30em;
+		right: 0;
+		position: absolute; */
+		float: right;
+		margin-right: -$columnWidthSide;
+		//position: relative;
+		//top: 22em;
+	}
+}
+
+@media screen and (max-height: 20em) {
+	footer {
+		background-color: red;
+	}
+}
+
+footer {
+	text-align: center;
+	padding: .1em 0 .5em;
+	background-color: #222;
+	margin-top: 1em;
+	line-height: 1.2;
+	font-size: 80%;
+	font-weight: lighter;
+	clear: both;
+}
+
+// Left
+header {
+
+}
+.nav-wrapper {
+
+}

@@ -15,8 +15,8 @@ author :
   name : Chinamobo开发团队
   email : devagent@chinamobo.com
   github : chinamobo
-  twitter : 
-  feedburner : 
+  twitter : false
+  feedburner : false
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
