@@ -1,0 +1,3 @@
+[submodule "assets/themes/rhenium/yolo"]
+	path = assets/themes/rhenium/yolo
+	url = https://github.com/BB9z/yolo.scss.git
