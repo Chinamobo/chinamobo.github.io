@@ -1,9 +1,10 @@
 
 html {
-	color: #555;
-
-	// 覆盖用户自定义背景颜色
-	background: #fff;
+    // 重设背景
+    // 并不设为白色，在 iOS 6 上，背景设置在 html 上旋转过程中背景色不能填充全屏
+    // 需要设置在 body 上，但如果只设置 body，顶部会产生白边
+    background: transparent;
+    color: #333;
 }
 
 // @List
@@ -172,7 +173,6 @@ hr {
 	height: 0;
 }
 
-// @语义标签统一
 acronym {
 	// Firefox 以外，元素没有下划线，需添加
 	border-bottom: 1px dotted;
@@ -251,5 +251,3 @@ small {
 	font-size: .8em;
 	color: #888;
 }
-
-// End @语义标签统一

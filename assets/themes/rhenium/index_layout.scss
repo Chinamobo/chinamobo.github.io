@@ -1,0 +1,53 @@
+
+$columnChange : 40em;
+
+.wrapper {
+	margin: 1em auto;
+    position: relative;
+    width: $columnChange;
+    
+    @media screen and (max-width:$columnChange) {
+        width: 100%;
+    }
+}
+
+header {
+    #profile-bar {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.main, .side {
+    margin: 1em;
+    
+    @media screen and (max-width: $columnChange) {
+        margin: 0;
+    }
+}
+
+@media screen and (orientation: landscape) {
+
+}
+
+// iPhone
+@media screen and (max-device-width: 480px) {
+
+}
+
+
+
+@media screen and (max-height: 20em) {
+
+}
+
+footer {
+	text-align: center;
+	padding: .1em 0 .5em;
+	background-color: #222;
+	margin-top: 1em;
+	line-height: 1.2;
+	font-size: 80%;
+	font-weight: lighter;
+	clear: both;
+}

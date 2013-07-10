@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
+    {% if page.author.name %}<meta name="author" content="{{ page.author.name }}">{% endif %}
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{ ASSET_PATH }}/typo.css" rel="stylesheet" type="text/css" media="all">
@@ -23,37 +23,37 @@
   </head>
   <body>
 	<div class="wrapper">
-			<header>
-				<hgroup>
-					<h1><a href="{{ HOME_PATH }}" rel="home">{{ site.title }}</a></h1>
-					<p id="tagline">{{ site.tagline }}</p>
-				</hgroup>
-				<ul id="profile-bar">
-					{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">github</a></li>{% endif %}
-					{% if site.author.twitter %}<li><a href="https://github.com/{{ site.author.github }}">twitter</a></li>{% endif %}
-					{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">feedburner</a></li>{% endif %}
-				</ul>
+		<header>
+			<hgroup>
+				<h1><a href="{{ HOME_PATH }}" rel="home">{{ site.title }}</a></h1>
+				<p id="tagline">{{ site.tagline }}</p>
+			</hgroup>
+			<ul id="profile-bar">
+				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">github</a></li>{% endif %}
+				{% if site.author.twitter %}<li><a href="https://github.com/{{ site.author.github }}">twitter</a></li>{% endif %}
+				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">feedburner</a></li>{% endif %}
+			</ul>
 
-				<div class="nav-wrapper">
-					<nav id="site_nav" class="clearfix">
-						{% if page.url == '/index.html' %}
-						<li class="active"><a href="{{ site.production_url }}" class="active">首页</a></li>
-						{% else %}
-						<li><a href="{{ site.production_url }}">首页</a></li>
-						{% endif %}
+			<div class="nav-wrapper">
+				<nav id="site_nav" class="clearfix">
+					{% if page.url == '/index.html' %}
+					<li class="active"><a href="{{ site.production_url }}" class="active">首页</a></li>
+					{% else %}
+					<li><a href="{{ site.production_url }}">首页</a></li>
+					{% endif %}
 
-						{% assign pages_list = site.pages %}
-						{% assign group = 'navigation' %}
-						{% include JB/pages_list %}
-					</nav>
-				</div>
-			</header>
-
-			<div class="main typo">
-				<div id="content" class="lbox">
-					{{ content }}
-				</div>
+					{% assign pages_list = site.pages %}
+					{% assign group = 'navigation' %}
+					{% include JB/pages_list %}
+				</nav>
 			</div>
+		</header>
+
+		<div class="main typo">
+			<div id="content" class="lbox">
+				{{ content }}
+			</div>
+		</div>
 
 		<div class="side clearfix">
 			news<br>
