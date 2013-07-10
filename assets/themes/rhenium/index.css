@@ -1,22 +1,4 @@
 @charset "utf-8";
-body {
-  background: #d7d7d7 url("background.png");
-}
-
-header {
-  background: transparent;
-}
-
-.main, .side {
-  -webkit-box-shadow: 0.1em 0.1em 0.4em 0.1em rgba(0, 0, 0, 0.2);
-  background: #FFF;
-  border: 1px #aaa solid;
-}
-
-#content {
-  padding: .7em 1.1em;
-}
-
 .wrapper {
   margin: 1em auto;
   position: relative;
@@ -51,4 +33,39 @@ footer {
   font-size: 80%;
   font-weight: lighter;
   clear: both;
+}
+
+body {
+  background: #d7d7d7 url("background.png");
+}
+
+a {
+  color: #0080ff;
+}
+a:visited {
+  color: #275186;
+}
+a:hover {
+  color: #3AF;
+}
+a:active {
+  color: #66CCFF;
+}
+
+.no_link_status a:visited {
+  color: #0080ff;
+}
+
+header {
+  background: transparent;
+}
+
+.main, .side {
+  box-shadow: 0.1em 0.1em 0.4em 0.1em rgba(0, 0, 0, 0.2);
+  background: #FFF;
+  border: 1px #aaa solid;
+}
+
+#content {
+  padding: .7em 1.1em;
 }
