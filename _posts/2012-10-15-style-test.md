@@ -1,11 +1,13 @@
 ---
-layout: index
-title: 首页
-tagline: Welcome~
-group: special
+layout: post
+title: "style test"
+description: ""
+category: 
+tags: [test, style]
+author: BB9z
+author_url: http://twitter.com/bb9z
 ---
 {% include JB/setup %}
-
 
 <h2 id="tagline">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 
@@ -52,8 +54,6 @@ group: special
             <th>IE8</th>
             <th>IE7</th>
             <th>IE6</th>
-            <th>IE10</th>
-            <th>IE11</th>
         </tr>
     </thead>
     <tbody>
@@ -63,8 +63,6 @@ group: special
             <td>√</td>
             <td>√</td>
             <td>√</td>
-            <td>-</td>
-            <td>-</td>
             <td>-</td>
             <td>-</td>
             <td>-</td>
@@ -80,8 +78,6 @@ group: special
             <td>√</td>
             <td>√</td>
             <td>-</td>
-            <td>-</td>
-            <td>-</td>
         </tr>
         <tr>
             <td>Windows XP</td>
@@ -93,8 +89,6 @@ group: special
             <td>√</td>
             <td>√</td>
             <td>√</td>
-            <td>-</td>
-            <td>-</td>
         </tr>
         <tr>
             <td>Ubuntu Linux</td>
@@ -102,8 +96,6 @@ group: special
             <td>√</td>
             <td>-</td>
             <td>√</td>
-            <td>-</td>
-            <td>-</td>
             <td>-</td>
             <td>-</td>
             <td>-</td>
@@ -217,3 +209,4 @@ group: special
 
 <h5 id="appendix2">2、开源许可</h5>
 <p>TYPO.CSS 基于 <a href="http://zh.wikipedia.org/wiki/MIT_License">MIT License</a> 开源，使用代码只需说明来源，或者引用 <a href="http://typo.sofish.de/license.txt">license.txt</a> 即可。</p>
+
