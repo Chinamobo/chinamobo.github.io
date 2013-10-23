@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    {% if page.author.name %}<meta name="author" content="{{ page.author.name }}">{% endif %}
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }} | {{ site.title }}</title>
+	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	{% if page.author.name %}<meta name="author" content="{{ page.author.name }}">{% endif %}
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{ ASSET_PATH }}/yolo/yolo.css" rel="stylesheet" type="text/css" media="all">
-	<link href="{{ ASSET_PATH }}/index.css" rel="stylesheet" type="text/css" media="all">
-    {% if site.author.feedburner %}<link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }} Feed" type="application/atom+xml">
+	<link href="{{ ASSET_PATH }}/base.css" rel="stylesheet" type="text/css" media="all">
+	{% if site.author.feedburner %}<link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }} Feed" type="application/atom+xml">
 	{% else %}<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ page.title }} ATOM Feed">
 	<link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="{{ page.title }} RSS Feed">{% endif %}
 	<link rel="shortcut icon" href="/favicon.ico">
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
-  </head>
-  <body>
+</head>
+<body>
 	<div class="wrapper">
 		<header class="no_link_status">
 			<hgroup>
 				<h1><a href="{{ HOME_PATH }}" rel="home">{{ site.title }}</a></h1>
 				<p id="tagline">{{ site.tagline }}</p>
 			</hgroup>
-			<ul id="profile-bar">
-				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">github</a></li>{% endif %}
-				{% if site.author.twitter %}<li><a href="https://github.com/{{ site.author.github }}">twitter</a></li>{% endif %}
-				{% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">feedburner</a></li>{% endif %}
-			</ul>
 
 			<div class="nav-wrapper">
 				<nav id="site_nav" class="clearfix">
-					{% if page.url == '/index.html' %}
-					<li class="active"><a href="{{ site.production_url }}" class="active">首页</a></li>
-					{% else %}
-					<li><a href="{{ site.production_url }}">首页</a></li>
-					{% endif %}
-
 					{% assign pages_list = site.pages %}
 					{% assign group = 'navigation' %}
 					{% include JB/pages_list %}
@@ -51,60 +33,16 @@
 
 		<div class="main yolo">
 			<div id="content" class="lbox">
-                
-<div>
-    <h1>Why you’ll love GitHub.</h1>
-    <p class="lead">Powerful features to make software development more collaborative.</p>
-</div>
-<div class="row">
-    <div class="one-third column">
-        <div class="teaser-icon">
-            <span class="mega-octicon octicon-checklist"></span>
-        </div>
-        <h3>Great collaboration starts with communication.</h3>
-        <p>Review changes, comment on lines of code, report issues, and plan the future of your project with discussion tools.</p>
-    </div>
-    <div class="one-third column">
-        <div class="teaser-icon">
-            <span class="mega-octicon octicon-person-team"></span>
-        </div>
-        <h3>Friction-less development across teams.</h3>
-        <p>Work with project collaborators or teams of people in organization accounts to communicate with ease.</p>
-    </div>
-    <div class="one-third column">
-        <div class="teaser-icon">
-            <span class="mega-octicon octicon-cloud-upload"></span>
-        </div>
-        <h3>World's largest open source community.</h3>
-        <p>Share your projects with the world, get feedback, and contribute to <a href="http://github.com/explore" _pageexpand_="62">millions of repositories</a> hosted on GitHub.</p>
-    </div>
-</div>
-                
-                
 				{{ content }}
 			</div>
 		</div>
-
-		<div class="side clearfix">
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-			news<br>
-		</div>
-
-	</div><!-- wrapper -->
+	</div>
 	<footer>
-		<small>COPYRIGHT &copy; 2012-{{ site.time | date: '%Y' }} {{ site.author.name }}<br>
+		<small>COPYRIGHT &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}<br>
 			ALL RIGHTS RESERVED.
 		</small>
 	</footer>
-	<!--<script src="{{ ASSET_PATH }}/main.js"></script>-->
 	{% include JB/analytics %}
-  </body>
+</body>
+{% if site.rhenium.include_pygments_style == true %}<link href="{{ ASSET_PATH }}/pygments.css" rel="stylesheet" type="text/css" media="all">{% endif %}
 </html>

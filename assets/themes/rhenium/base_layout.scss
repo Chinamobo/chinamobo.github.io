@@ -1,0 +1,28 @@
+
+$columnChange : 40em;
+
+.wrapper {
+	margin: auto;
+	position: relative;
+	width: $columnChange;
+
+	@media screen and (max-width:$columnChange) {
+		width: 100%;
+	}
+}
+
+header {
+}
+
+.main, .side {
+	margin-top: 1em;
+}
+
+footer {
+	text-align: center;
+	margin-top: 2em;
+	line-height: 1.2;
+	font-size: 80%;
+	font-weight: lighter;
+	clear: both;
+}

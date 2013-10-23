@@ -6,8 +6,20 @@ category:
 tags: [test, style]
 author: BB9z
 author_url: http://twitter.com/bb9z
+excerpt: What text editor to use? Sass or plain old CSS? What on earth is Compass? Command    line? I'm not touching that. Sound like you? Welcome, I was once like you and this is the guide I wish someone had given me.
+
 ---
 {% include JB/setup %}
+
+
+
+33
+
+----
+
+* 34444
+
+
 
 <h2 id="tagline">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 

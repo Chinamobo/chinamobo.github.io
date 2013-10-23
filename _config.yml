@@ -10,11 +10,11 @@ markdown: rdiscount
 # so be sure to set them if your theme uses them.
 #
 title : Chinamobo开发团队网志
-tagline: 我们是移动信息化专家
+tagline: 专注企业移动化
 author :
   name : Chinamobo开发团队
   email : devagent@chinamobo.com
-  github : chinamobo
+  github : false
   twitter : false
   feedburner : false
 
@@ -129,4 +129,13 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+  
+
+excerpt_separator: <!--more-->
+# you can specify your own separator, of course.
+
+
+# rhenium setting
+rhenium :
+  include_pygments_style : true
   
