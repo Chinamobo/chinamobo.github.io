@@ -1,7 +1,7 @@
 {% comment %}<!--
 
 -->{% endcomment %}
-<div class="posts">{% for post in site.posts  %}
+<div class="posts yolo">{% for post in site.posts  %}
 	<div class="post">
 		<h2 class="post-title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
 		{% include rhenium/post_meta post=post %}
