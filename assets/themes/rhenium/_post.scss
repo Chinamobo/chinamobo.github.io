@@ -1,0 +1,22 @@
+// 列表
+.posts {
+	.post {
+		margin-bottom: 1em;
+	}
+}
+
+.post {
+	.post-title {
+		margin-bottom: .1em;
+	}
+	
+	.post-meta {
+		font-size: 80%;
+		margin-left: 0;
+		
+		li {
+			display: inline;
+			padding-right: 1em;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{% comment %}<!--
+
+-->{% endcomment %}
+
+<div class="posts">
+	{% for post in site.posts  %}
+	<div class="post">
+		<h2 class="post-title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+		<ul class="post-meta">
+			<li class="post-date">{{ post.date | date: "%b %d, %Y" }}</li>
+			<li class="post-author"></li>
+			<li class="post-category"></li>
+		</ul>
+		{% if post.excerpt.size != post.content.size %}
+		<div class="post-summary">{{ post.excerpt }}</div>
+		{% else %}
+			{% if site.rhenium.show_full_post_in_posts_list %}
+			<div class="post-body">{{ post.content }}</div>
+			{% endif %}
+		{% endif %}
+	</div>
+	{% endfor %}
+</div>

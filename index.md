@@ -6,16 +6,7 @@ group: special
 ---
 
 {% include JB/setup %}
-
-<ul>
-{% for post in site.posts  %}
-<li>
-	<a href="{{ BASE_PATH }}{{ post.url }}"><span class="title">{{ post.title }}</span></a>
-	<span>{{ post.date | date: "%m %d %Y" }}</span>
-	<p>{{ post.excerpt }}</p>
-</li>
-{% endfor %}
-</ul>
+{% include themes/rhenium/posts_list %}
 
 {% highlight ruby %}
 def show

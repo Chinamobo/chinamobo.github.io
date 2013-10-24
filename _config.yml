@@ -138,3 +138,5 @@ excerpt_separator: <!--more-->
 rhenium :
   include_pygments_style : true
   
+  show_full_post_in_posts_list : false
+  

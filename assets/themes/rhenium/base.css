@@ -25,3 +25,19 @@ footer {
 body {
   background: #FCFCFC;
 }
+
+.posts .post {
+  margin-bottom: 1em;
+}
+
+.post .post-title {
+  margin-bottom: .1em;
+}
+.post .post-meta {
+  font-size: 80%;
+  margin-left: 0;
+}
+.post .post-meta li {
+  display: inline;
+  padding-right: 1em;
+}
