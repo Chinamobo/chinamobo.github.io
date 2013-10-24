@@ -26,6 +26,14 @@ body {
   background: #FCFCFC;
 }
 
+@media print {
+  header a, header a:visited {
+    text-direction: none !important;
+  }
+  header a[href]:after {
+    content: none;
+  }
+}
 .posts .post {
   margin-bottom: 1em;
 }

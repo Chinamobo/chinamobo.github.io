@@ -3,3 +3,15 @@
 body {
 	background: #FCFCFC;
 }
+
+@media print {
+    header {
+        a, a:visited {
+            text-direction: none!important;
+        }
+            
+        a[href]:after {
+            content: none;
+        }
+    }
+}
