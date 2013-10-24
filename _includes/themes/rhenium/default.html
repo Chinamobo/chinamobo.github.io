@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<title>{{ page.title }} | {{ site.title }}</title>
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-	{% if page.author.name %}<meta name="author" content="{{ page.author.name }}">{% endif %}
+	{% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{ ASSET_PATH }}/yolo/yolo.css" rel="stylesheet" type="text/css" media="all">
 	<link href="{{ ASSET_PATH }}/base.css" rel="stylesheet" type="text/css" media="all">
-	{% if site.author.feedburner %}<link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }} Feed" type="application/atom+xml">
-	{% else %}<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ page.title }} ATOM Feed">
-	<link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="{{ page.title }} RSS Feed">{% endif %}
+	{% if site.author.feedburner %}<link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ site.title }} Feed" type="application/atom+xml">
+	{% else %}<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} ATOM Feed">
+	<link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="{{ site.title }} RSS Feed">{% endif %}
 	<link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body>

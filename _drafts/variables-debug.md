@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Variables Debug
-description: 
+description: 环境变量测试页面
 category: test
+author: 无名氏
 ---
 
 {% include rhenium/setup %}
