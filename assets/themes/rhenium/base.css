@@ -42,3 +42,7 @@ body {
   display: inline;
   padding-right: 1em;
 }
+
+article.post .post-title {
+  color: #275186;
+}

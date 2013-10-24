@@ -11,16 +11,16 @@ author_email
 -->{% endcomment %}
 
 {% capture author-avatar %}{% if is_md5_available %}
-{% if post.author_email.size %}
-<img class="author-avatar" height="18px" width="18px" src="//www.gravatar.com/avatar/{{ post.author_email | remove: ' ' | strip_newlines | downcase | md5 }}?d=mm&s=36">
+{% if include.post.author_email.size %}
+<img class="author-avatar" height="18px" width="18px" src="//www.gravatar.com/avatar/{{ include.post.author_email | remove: ' ' | strip_newlines | downcase | md5 }}?d=mm&s=36">
 {% endif %}
 {% endif %}{% endcapture %}
 
 {{ author-avatar }}
-{% if post.author_url %}
-<a class="inherit-link" href="{{ post.author_url }}">{% if post.author %}{{ post.author }}{% else %}author{% endif %}</a>
+{% if include.post.author_url %}
+<a class="inherit-link" href="{{ include.post.author_url }}">{% if include.post.author %}{{ include.post.author }}{% else %}author{% endif %}</a>
 {% else %}
-{% if page.author %}{{ page.author }}{% endif %}
+{% if include.post.author %}{{ include.post.author }}{% endif %}
 {% endif %}
 
 {% assign author-avatar = nil %}
