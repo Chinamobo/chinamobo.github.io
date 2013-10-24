@@ -46,3 +46,25 @@ body {
 article.post .post-title {
   color: #275186;
 }
+
+.pagination {
+  margin-bottom: 1em;
+}
+.pagination li {
+  display: inline-block;
+}
+.pagination .prev :before {
+  content: "< ";
+}
+.pagination .next {
+  float: right;
+}
+.pagination .next :after {
+  content: " >";
+}
+
+@media print {
+  .pagination {
+    display: none;
+  }
+}
