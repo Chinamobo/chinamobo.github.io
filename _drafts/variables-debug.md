@@ -4,9 +4,8 @@ title: Variables Debug
 description: 环境变量测试页面
 category: test
 author: 无名氏
----
 
-{% include rhenium/setup %}
+---
 
 site:
 {{ site | debug }}
