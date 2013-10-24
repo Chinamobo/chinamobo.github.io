@@ -142,3 +142,7 @@ rhenium :
   
   show_full_post_in_posts_list : false
   
+  # 多用户模式，可以为每个post指定作者
+  # 该模式下文章信息会显示作者信息
+  multi_user_mode : true
+  
