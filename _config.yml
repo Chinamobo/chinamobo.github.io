@@ -133,6 +133,8 @@ JB :
 excerpt_separator: <!--more-->
 # you can specify your own separator, of course.
 
+paginate: 5
+paginate_path: "blog/page:num"
 
 # rhenium setting
 rhenium :
