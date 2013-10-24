@@ -1,0 +1,16 @@
+{% comment %}<!--
+
+-->{% endcomment %}
+{% capture _rhenium %}
+
+{% include JB/setup %}
+
+{% capture md5_test_string %}{{ "test" | md5 }}{% endcapture %}
+{% if md5_test_string == "098f6bcd4621d373cade4e832627b4f6" %}
+	{% assign is_md5_available = true %}
+{% else %}
+	{% assign is_md5_available = false %}
+{% endif %}
+{% assign md5_test_string = nil %}
+
+{% endcapture %}{% assign _rhenium = nil %}

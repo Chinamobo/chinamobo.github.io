@@ -1,3 +1,4 @@
+{% capture _rhenium %}
 {% comment %}<!--
 作者信息
 
@@ -9,14 +10,13 @@ author_email
 使用 Gravatar 头像，文档见： http://en.gravatar.com/site/implement/images/
 -->{% endcomment %}
 
-{% capture author-avatar %}
+{% capture author-avatar %}{% if is_md5_available %}
 {% if post.author_email.size %}
 <img class="author-avatar" height="18px" width="18px" src="//www.gravatar.com/avatar/{{ post.author_email | remove: ' ' | strip_newlines | downcase | md5 }}?d=mm&s=36">
 {% endif %}
-{% endcapture %}
+{% endif %}{% endcapture %}
 
--{{ author-avatar }}-
-
+{{ author-avatar }}
 {% if post.author_url %}
 <a class="inherit-link" href="{{ post.author_url }}">{% if post.author %}{{ post.author }}{% else %}author{% endif %}</a>
 {% else %}
@@ -24,3 +24,4 @@ author_email
 {% endif %}
 
 {% assign author-avatar = nil %}
+{% endcapture %}{{ _rhenium | strip_newlines }}{% assign _rhenium = nil %}
