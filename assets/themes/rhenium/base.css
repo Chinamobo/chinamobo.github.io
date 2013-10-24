@@ -36,6 +36,7 @@ body {
 .post .post-meta {
   font-size: 80%;
   margin-left: 0;
+  color: #555;
 }
 .post .post-meta li {
   display: inline;

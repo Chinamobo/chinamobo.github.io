@@ -1,22 +1,15 @@
 /*!
-	https://github.com/richleland/pygments-css/blob/master/friendly.css
+    https://github.com/richleland/pygments-css/blob/master/friendly.css
 */
-.highlight .hll {
+.highlight {
   background-color: #ffffcc;
-}
-.highlight .c {
-  color: #60a0b0;
-  font-style: italic;
 }
 .highlight .err {
   border: 1px solid red;
 }
-.highlight .k {
-  color: #007020;
-  font-weight: bold;
-}
-.highlight .o {
-  color: #666666;
+.highlight .c {
+  color: #60a0b0;
+  font-style: italic;
 }
 .highlight .cm {
   color: #60a0b0;
@@ -32,6 +25,41 @@
 .highlight .cs {
   color: #60a0b0;
   background-color: #fff0f0;
+}
+.highlight .k {
+  color: #007020;
+  font-weight: bold;
+}
+.highlight .kc {
+  color: #007020;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #007020;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #007020;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #007020;
+}
+.highlight .kr {
+  color: #007020;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #902000;
+}
+.highlight .o {
+  color: #666666;
+}
+.highlight .m {
+  color: #40a070;
+}
+.highlight .s {
+  color: #4070a0;
 }
 .highlight .gd {
   color: #a00000;
@@ -65,34 +93,6 @@
 }
 .highlight .gt {
   color: #0040d0;
-}
-.highlight .kc {
-  color: #007020;
-  font-weight: bold;
-}
-.highlight .kd {
-  color: #007020;
-  font-weight: bold;
-}
-.highlight .kn {
-  color: #007020;
-  font-weight: bold;
-}
-.highlight .kp {
-  color: #007020;
-}
-.highlight .kr {
-  color: #007020;
-  font-weight: bold;
-}
-.highlight .kt {
-  color: #902000;
-}
-.highlight .m {
-  color: #40a070;
-}
-.highlight .s {
-  color: #4070a0;
 }
 .highlight .na {
   color: #4070a0;
