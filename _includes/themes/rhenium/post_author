@@ -1,0 +1,26 @@
+{% comment %}<!--
+作者信息
+
+支持字段（全部可选）：
+author
+author_url
+author_email
+
+使用 Gravatar 头像，文档见： http://en.gravatar.com/site/implement/images/
+-->{% endcomment %}
+
+{% capture author-avatar %}
+{% if post.author_email.size %}
+<img class="author-avatar" height="18px" width="18px" src="//www.gravatar.com/avatar/{{ post.author_email | remove: ' ' | strip_newlines | downcase | md5 }}?d=mm&s=36">
+{% endif %}
+{% endcapture %}
+
+-{{ author-avatar }}-
+
+{% if post.author_url %}
+<a class="inherit-link" href="{{ post.author_url }}">{% if post.author %}{{ post.author }}{% else %}author{% endif %}</a>
+{% else %}
+{% if page.author %}{{ page.author }}{% endif %}
+{% endif %}
+
+{% assign author-avatar = nil %}

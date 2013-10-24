@@ -8,7 +8,7 @@
 		<h2 class="post-title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
 		<ul class="post-meta">
 			<li class="post-date">{{ post.date | date: "%b %d, %Y" }}</li>
-			<li class="post-author"></li>
+			<li class="post-author">{% include themes/rhenium/post_author %}</li>
 			<li class="post-category"></li>
 		</ul>
 		{% if post.excerpt.size != post.content.size %}
