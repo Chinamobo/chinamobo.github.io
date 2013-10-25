@@ -56,11 +56,9 @@ Microsoft Office 一直有一个内建的素材管理、使用的机制，可以
     ![添加收藏集步骤演示]({{ site.url }}/img/office/clips/clips_manager_add_share_collection.gif)
     
     公司共享收藏集的路径是：
-    
-    ```
-    \\fs\Company\3.标识 & VI\Office Clips\Chinamobo.mgc
-    ```
-    
+<pre>
+\\fs\Company\3.标识 & VI\Office Clips\Chinamobo.mgc
+</pre>
 
 3. 重启剪辑管理器后你应该能在收藏集列表中看到新增的收藏集了，如下所示：
 
