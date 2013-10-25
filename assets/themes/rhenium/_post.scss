@@ -1,11 +1,6 @@
-// 列表
-.posts {
-    .post {
-        margin-bottom: 1em;
-    }
-    }
 
-    .post {
+
+.post {
     .post-title {
         margin-bottom: .1em;
     }
@@ -19,6 +14,13 @@
             display: inline;
             padding-right: 1em;
         }
+    }
+}
+
+// 列表内特殊样式
+.posts {
+    .post {
+        margin-bottom: 1em;
     }
 }
 

@@ -1,5 +1,5 @@
 <ul class="post-meta">
 	<li class="post-date">{{ include.post.date | date: "%b %d, %Y" }}</li>
 	{% if site.rhenium.multi_user_mode %}<li class="post-author">{% include rhenium/post_author post=include.post %}</li>{% endif %}
-	<li class="post-category"></li>
+	{% if include.post.category %}<li class="post-category">分类：{{ include.post.category }}</li>{% endif %}
 </ul>

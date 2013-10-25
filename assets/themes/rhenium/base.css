@@ -5,7 +5,7 @@
 }
 @media screen and (max-width: 40em) {
   .wrapper {
-    width: 100%;
+    width: 98%;
   }
 }
 
@@ -34,10 +34,6 @@ body {
     content: none;
   }
 }
-.posts .post {
-  margin-bottom: 1em;
-}
-
 .post .post-title {
   margin-bottom: .1em;
 }
@@ -49,6 +45,10 @@ body {
 .post .post-meta li {
   display: inline;
   padding-right: 1em;
+}
+
+.posts .post {
+  margin-bottom: 1em;
 }
 
 article.post .post-title {
