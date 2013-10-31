@@ -58,6 +58,10 @@ article.post .post-title {
   color: #275186;
 }
 
+.comment {
+  clear: both;
+}
+
 .pagination {
   margin-bottom: 1em;
 }

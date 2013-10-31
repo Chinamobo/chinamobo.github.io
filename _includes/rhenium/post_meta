@@ -9,5 +9,5 @@ POST 元数据
 	<li class="post-date">{{ include.post.date | date: "%b %d, %Y" }}</li>
 	{% if site.rhenium.multi_user_mode %}<li class="post-author">{% include rhenium/post_author post=include.post %}</li>{% endif %}
 	{% if include.post.category %}<li class="post-category">分类：{{ include.post.category }}</li>{% endif %}
-	{% if site.rhenium.disqus.commnet_count_enabled %}<li class="post-comment-count"><a href="{{ include.post.url }}#disqus_thread" data-disqus-identifier="{{ include.post.id }}">评论</a></li>{% endif %}
+	{% if site.rhenium.disqus.commnet_count_enabled %}<li class="post-comment-count"><a href="{{ BASE_PATH }}{{ include.post.url }}#disqus_thread" data-disqus-identifier="{{ include.post.id }}">评论</a></li>{% endif %}
 </ul>
