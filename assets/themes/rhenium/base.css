@@ -57,6 +57,9 @@ body {
 article.post .post-title {
   color: #275186;
 }
+article.post h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 
 .comment {
   clear: both;
