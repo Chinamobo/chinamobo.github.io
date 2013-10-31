@@ -15,4 +15,6 @@
 	</ul>
 </div>
 
-<section class="comment">{% include JB/comments %}</section>
+<section class="comment">
+	{% if site.rhenium.disqus.post_comment_enabled %}<div id="disqus_thread"></div>{% include rhenium/disqus %}{% endif %}
+</section>

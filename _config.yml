@@ -148,3 +148,8 @@ rhenium :
   # 该模式下文章信息会显示作者信息
   multi_user_mode : true
   
+  disqus:
+      post_comment_enabled: true
+      commnet_count_enabled: true
+      short_name : chinamobo
+      

@@ -46,6 +46,9 @@ body {
   display: inline;
   padding-right: 1em;
 }
+.post .post-comment-count {
+  float: right;
+}
 
 .posts .post {
   margin-bottom: 1em;

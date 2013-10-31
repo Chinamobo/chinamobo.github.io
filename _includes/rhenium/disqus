@@ -1,0 +1,15 @@
+{% comment %}<!--
+disqus 嵌入
+http://help.disqus.com/customer/portal/articles/472098
+-->{% endcomment %}
+<script type="text/javascript">
+var disqus_shortname = '{{ site.rhenium.disqus.short_name }}';
+var disqus_title = '{{ page.title }}';
+var disqus_url = '{{ site.production_url}}{{ page.url }}';
+
+(function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>

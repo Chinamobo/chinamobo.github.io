@@ -6,7 +6,7 @@
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 	{% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="{{ ASSET_PATH }}/yolo/yolo-min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="{{ ASSET_PATH }}/yolo/yolo.css" rel="stylesheet" type="text/css" media="all">
 	<link href="{{ ASSET_PATH }}/base.css" rel="stylesheet" type="text/css" media="all">
 	{% if site.author.feedburner %}<link href="//feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ site.title }} Feed" type="application/atom+xml">
 	{% else %}<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} ATOM Feed">
@@ -41,5 +41,6 @@
 	</footer>
 	{% include JB/analytics %}
 	{% include rhenium/pygments_css %}
+	{% if site.rhenium.disqus.commnet_count_enabled %}{% include rhenium/disqus_count %}{% endif %}
 </body>
 </html>

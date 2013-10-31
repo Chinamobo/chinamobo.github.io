@@ -1,5 +1,4 @@
 
-
 .post {
     .post-title {
         margin-bottom: .1em;
@@ -14,6 +13,10 @@
             display: inline;
             padding-right: 1em;
         }
+    }
+    
+    .post-comment-count {
+        float: right;
     }
 }
 
