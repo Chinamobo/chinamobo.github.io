@@ -6,6 +6,7 @@ http://help.disqus.com/customer/portal/articles/472098
 var disqus_shortname = '{{ site.rhenium.disqus.short_name }}';
 var disqus_title = '{{ page.title }}';
 var disqus_url = '{{ site.production_url}}{{ page.url }}';
+var disqus_identifier = '{{ page.id }}'
 
 (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
